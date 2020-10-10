@@ -3,29 +3,67 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90125860308F8A9ED303B2E0 /* Pods_24h_Online_Store.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 579211551D2162DFDE09F5C2 /* Pods_24h_Online_Store.framework */; };
+		BD09881F2529AB5700ECE2E9 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD09881E2529AB5700ECE2E9 /* SignUpRequest.swift */; };
+		BD0988212529ACBA00ECE2E9 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0988202529ACBA00ECE2E9 /* SignUpViewModel.swift */; };
+		BD0988232529AE8800ECE2E9 /* SignUpSuccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0988222529AE8800ECE2E9 /* SignUpSuccessModel.swift */; };
+		BD098825252C643B00ECE2E9 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD098824252C643A00ECE2E9 /* UIImage+Ext.swift */; };
+		BD098827252C75CA00ECE2E9 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD098826252C75CA00ECE2E9 /* HomeVC.swift */; };
+		BD098829252C7AB600ECE2E9 /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD098828252C7AB600ECE2E9 /* CategoriesVC.swift */; };
+		BD09882B252C7ADB00ECE2E9 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD09882A252C7ADB00ECE2E9 /* CartVC.swift */; };
+		BD09882D252C7AF900ECE2E9 /* MyAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD09882C252C7AF900ECE2E9 /* MyAccountVC.swift */; };
+		BD09882F252C7E2200ECE2E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD09882E252C7E1F00ECE2E9 /* Assets.xcassets */; };
 		BD3BFAAC251EDA40005582E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3BFAAB251EDA40005582E7 /* AppDelegate.swift */; };
 		BD3BFAAE251EDA40005582E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3BFAAD251EDA40005582E7 /* SceneDelegate.swift */; };
-		BD3BFAB0251EDA40005582E7 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3BFAAF251EDA40005582E7 /* FirstViewController.swift */; };
-		BD3BFAB2251EDA40005582E7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3BFAB1251EDA40005582E7 /* SecondViewController.swift */; };
 		BD3BFAB5251EDA40005582E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3BFAB3251EDA40005582E7 /* Main.storyboard */; };
-		BD3BFAB7251EDAB8005582E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD3BFAB6251EDAB8005582E7 /* Assets.xcassets */; };
 		BD3BFABA251EDAB9005582E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3BFAB8251EDAB9005582E7 /* LaunchScreen.storyboard */; };
+		BDA8695725205BDA00D37F00 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8695625205BDA00D37F00 /* LogInVC.swift */; };
+		BDA869592521AA2600D37F00 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA869582521AA2600D37F00 /* SignUpVC.swift */; };
+		BDA8695C2521AC2400D37F00 /* TextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8695B2521AC2400D37F00 /* TextField+Ext.swift */; };
+		BDA8695E2521AD4800D37F00 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8695D2521AD4800D37F00 /* UIButton+Ext.swift */; };
+		BDA869602521AE4000D37F00 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8695F2521AE4000D37F00 /* UIImageView+Ext.swift */; };
+		BDFF230A25280CBB0006C2CD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFF230925280CBB0006C2CD /* APIManager.swift */; };
+		BDFF230D2528316C0006C2CD /* LoginSuccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFF230C2528316C0006C2CD /* LoginSuccessModel.swift */; };
+		BDFF2311252839A20006C2CD /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFF2310252839A20006C2CD /* LoginRequest.swift */; };
+		BDFF231425283FF60006C2CD /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFF231325283FF60006C2CD /* Helper.swift */; };
+		BDFF2318252845100006C2CD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFF2317252845100006C2CD /* LoginViewModel.swift */; };
+		BDFF231A25296E430006C2CD /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFF231925296E430006C2CD /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49F8F4A396730BCD7706DEFC /* Pods-24h Online Store.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-24h Online Store.debug.xcconfig"; path = "Target Support Files/Pods-24h Online Store/Pods-24h Online Store.debug.xcconfig"; sourceTree = "<group>"; };
+		579211551D2162DFDE09F5C2 /* Pods_24h_Online_Store.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_24h_Online_Store.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76D3B99DEDDB373F00397C49 /* Pods-24h Online Store.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-24h Online Store.release.xcconfig"; path = "Target Support Files/Pods-24h Online Store/Pods-24h Online Store.release.xcconfig"; sourceTree = "<group>"; };
+		BD09881E2529AB5700ECE2E9 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
+		BD0988202529ACBA00ECE2E9 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		BD0988222529AE8800ECE2E9 /* SignUpSuccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSuccessModel.swift; sourceTree = "<group>"; };
+		BD098824252C643A00ECE2E9 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		BD098826252C75CA00ECE2E9 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		BD098828252C7AB600ECE2E9 /* CategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
+		BD09882A252C7ADB00ECE2E9 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		BD09882C252C7AF900ECE2E9 /* MyAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountVC.swift; sourceTree = "<group>"; };
+		BD09882E252C7E1F00ECE2E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD3BFAA8251EDA40005582E7 /* 24h Online Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "24h Online Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD3BFAAB251EDA40005582E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD3BFAAD251EDA40005582E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BD3BFAAF251EDA40005582E7 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		BD3BFAB1251EDA40005582E7 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		BD3BFAB4251EDA40005582E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BD3BFAB6251EDAB8005582E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD3BFAB9251EDAB9005582E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD3BFABB251EDAB9005582E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDA8695625205BDA00D37F00 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
+		BDA869582521AA2600D37F00 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		BDA8695B2521AC2400D37F00 /* TextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Ext.swift"; sourceTree = "<group>"; };
+		BDA8695D2521AD4800D37F00 /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
+		BDA8695F2521AE4000D37F00 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		BDFF230925280CBB0006C2CD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		BDFF230C2528316C0006C2CD /* LoginSuccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccessModel.swift; sourceTree = "<group>"; };
+		BDFF2310252839A20006C2CD /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		BDFF231325283FF60006C2CD /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		BDFF2317252845100006C2CD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		BDFF231925296E430006C2CD /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +71,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90125860308F8A9ED303B2E0 /* Pods_24h_Online_Store.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7244223C5EB046C2CCB9AF9F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49F8F4A396730BCD7706DEFC /* Pods-24h Online Store.debug.xcconfig */,
+				76D3B99DEDDB373F00397C49 /* Pods-24h Online Store.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B055FCC9E7C6C68DBD571DB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				579211551D2162DFDE09F5C2 /* Pods_24h_Online_Store.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD098830253133D800ECE2E9 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BD098826252C75CA00ECE2E9 /* HomeVC.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
 		BD3BFA9F251EDA40005582E7 = {
 			isa = PBXGroup;
 			children = (
 				BD3BFAAA251EDA40005582E7 /* 24h Online Store */,
 				BD3BFAA9251EDA40005582E7 /* Products */,
+				7244223C5EB046C2CCB9AF9F /* Pods */,
+				B055FCC9E7C6C68DBD571DB7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +124,97 @@
 		BD3BFAAA251EDA40005582E7 /* 24h Online Store */ = {
 			isa = PBXGroup;
 			children = (
+				BDFF230825280BF80006C2CD /* API */,
+				BDA8695A2521AB8000D37F00 /* Extension */,
+				BDFF231225283F2C0006C2CD /* Auth */,
+				BD098830253133D800ECE2E9 /* HomeScreen */,
 				BD3BFAAB251EDA40005582E7 /* AppDelegate.swift */,
 				BD3BFAAD251EDA40005582E7 /* SceneDelegate.swift */,
-				BD3BFAAF251EDA40005582E7 /* FirstViewController.swift */,
-				BD3BFAB1251EDA40005582E7 /* SecondViewController.swift */,
 				BD3BFAB3251EDA40005582E7 /* Main.storyboard */,
-				BD3BFAB6251EDAB8005582E7 /* Assets.xcassets */,
 				BD3BFAB8251EDAB9005582E7 /* LaunchScreen.storyboard */,
+				BD09882E252C7E1F00ECE2E9 /* Assets.xcassets */,
 				BD3BFABB251EDAB9005582E7 /* Info.plist */,
+				BDFF231325283FF60006C2CD /* Helper.swift */,
+				BD098828252C7AB600ECE2E9 /* CategoriesVC.swift */,
+				BD09882A252C7ADB00ECE2E9 /* CartVC.swift */,
+				BD09882C252C7AF900ECE2E9 /* MyAccountVC.swift */,
 			);
 			path = "24h Online Store";
+			sourceTree = "<group>";
+		};
+		BDA8695A2521AB8000D37F00 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BDA8695B2521AC2400D37F00 /* TextField+Ext.swift */,
+				BDA8695D2521AD4800D37F00 /* UIButton+Ext.swift */,
+				BDA8695F2521AE4000D37F00 /* UIImageView+Ext.swift */,
+				BDFF231925296E430006C2CD /* UIViewController+Ext.swift */,
+				BD098824252C643A00ECE2E9 /* UIImage+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BDFF230825280BF80006C2CD /* API */ = {
+			isa = PBXGroup;
+			children = (
+				BDFF230925280CBB0006C2CD /* APIManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		BDFF230B252831410006C2CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BDFF230F252837B70006C2CD /* APIResponses */,
+				BDFF230E2528379A0006C2CD /* APIRequests */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BDFF230E2528379A0006C2CD /* APIRequests */ = {
+			isa = PBXGroup;
+			children = (
+				BDFF2310252839A20006C2CD /* LoginRequest.swift */,
+				BD09881E2529AB5700ECE2E9 /* SignUpRequest.swift */,
+			);
+			path = APIRequests;
+			sourceTree = "<group>";
+		};
+		BDFF230F252837B70006C2CD /* APIResponses */ = {
+			isa = PBXGroup;
+			children = (
+				BDFF230C2528316C0006C2CD /* LoginSuccessModel.swift */,
+				BD0988222529AE8800ECE2E9 /* SignUpSuccessModel.swift */,
+			);
+			path = APIResponses;
+			sourceTree = "<group>";
+		};
+		BDFF231225283F2C0006C2CD /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				BDFF230B252831410006C2CD /* Model */,
+				BDFF2315252844040006C2CD /* View */,
+				BDFF2316252844360006C2CD /* ViewModel */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		BDFF2315252844040006C2CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BDA8695625205BDA00D37F00 /* LogInVC.swift */,
+				BDA869582521AA2600D37F00 /* SignUpVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BDFF2316252844360006C2CD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BDFF2317252845100006C2CD /* LoginViewModel.swift */,
+				BD0988202529ACBA00ECE2E9 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD3BFABE251EDAB9005582E7 /* Build configuration list for PBXNativeTarget "24h Online Store" */;
 			buildPhases = (
+				075855FE9D165415307B4362 /* [CP] Check Pods Manifest.lock */,
 				BD3BFAA4251EDA40005582E7 /* Sources */,
 				BD3BFAA5251EDA40005582E7 /* Frameworks */,
 				BD3BFAA6251EDA40005582E7 /* Resources */,
+				418C600B307E622808093A8F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,22 +278,81 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD3BFABA251EDAB9005582E7 /* LaunchScreen.storyboard in Resources */,
-				BD3BFAB7251EDAB8005582E7 /* Assets.xcassets in Resources */,
+				BD09882F252C7E2200ECE2E9 /* Assets.xcassets in Resources */,
 				BD3BFAB5251EDA40005582E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		075855FE9D165415307B4362 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-24h Online Store-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		418C600B307E622808093A8F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-24h Online Store/Pods-24h Online Store-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-24h Online Store/Pods-24h Online Store-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-24h Online Store/Pods-24h Online Store-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BD3BFAA4251EDA40005582E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD3BFAB2251EDA40005582E7 /* SecondViewController.swift in Sources */,
-				BD3BFAB0251EDA40005582E7 /* FirstViewController.swift in Sources */,
+				BDFF230D2528316C0006C2CD /* LoginSuccessModel.swift in Sources */,
+				BD0988212529ACBA00ECE2E9 /* SignUpViewModel.swift in Sources */,
+				BDFF231A25296E430006C2CD /* UIViewController+Ext.swift in Sources */,
+				BDFF2311252839A20006C2CD /* LoginRequest.swift in Sources */,
+				BDFF230A25280CBB0006C2CD /* APIManager.swift in Sources */,
 				BD3BFAAC251EDA40005582E7 /* AppDelegate.swift in Sources */,
+				BD098825252C643B00ECE2E9 /* UIImage+Ext.swift in Sources */,
+				BD098829252C7AB600ECE2E9 /* CategoriesVC.swift in Sources */,
+				BDFF2318252845100006C2CD /* LoginViewModel.swift in Sources */,
+				BDA869602521AE4000D37F00 /* UIImageView+Ext.swift in Sources */,
+				BDA8695E2521AD4800D37F00 /* UIButton+Ext.swift in Sources */,
+				BD0988232529AE8800ECE2E9 /* SignUpSuccessModel.swift in Sources */,
+				BDA8695725205BDA00D37F00 /* LogInVC.swift in Sources */,
+				BDA869592521AA2600D37F00 /* SignUpVC.swift in Sources */,
+				BDFF231425283FF60006C2CD /* Helper.swift in Sources */,
+				BD09881F2529AB5700ECE2E9 /* SignUpRequest.swift in Sources */,
+				BDA8695C2521AC2400D37F00 /* TextField+Ext.swift in Sources */,
+				BD098827252C75CA00ECE2E9 /* HomeVC.swift in Sources */,
+				BD09882B252C7ADB00ECE2E9 /* CartVC.swift in Sources */,
 				BD3BFAAE251EDA40005582E7 /* SceneDelegate.swift in Sources */,
+				BD09882D252C7AF900ECE2E9 /* MyAccountVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +494,7 @@
 		};
 		BD3BFABF251EDAB9005582E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49F8F4A396730BCD7706DEFC /* Pods-24h Online Store.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +513,7 @@
 		};
 		BD3BFAC0251EDAB9005582E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76D3B99DEDDB373F00397C49 /* Pods-24h Online Store.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
