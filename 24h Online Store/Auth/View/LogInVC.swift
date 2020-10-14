@@ -21,9 +21,9 @@ class LogInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        emailTF.text = "ismail.is@gmail.com"
-        passwordTF.text = "123456"
-        
+//        emailTF.text = "ismail.is@gmail.com"
+//        passwordTF.text = "123456"
+//        
         
         bindTextFieldsToViewModel()
         subscribeIsValidLogin()

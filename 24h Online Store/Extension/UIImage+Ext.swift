@@ -8,6 +8,7 @@
 
 import UIKit
 extension UIImage{
+    //to create top line view in tabBar 
   static func createSelectionIndicator(size: CGSize) -> UIImage {
              UIGraphicsBeginImageContextWithOptions(size, false, 0)
               UIColor(named: "mainColor")?.setFill()
