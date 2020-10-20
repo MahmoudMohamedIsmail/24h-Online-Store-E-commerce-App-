@@ -11,20 +11,17 @@ import RxCocoa
 import RxSwift
 
 class LogInVC: UIViewController {
-    
+    //MARK: - IBOutlet
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordTF: UITextField!
-    
+    //MARK: - Properties
     let loginViewModel = LoginViewModel()
     let disposeBag = DisposeBag()
+    //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-//        emailTF.text = "ismail.is@gmail.com"
-//        passwordTF.text = "123456"
-//        
-        
         bindTextFieldsToViewModel()
         subscribeIsValidLogin()
         subscribeToLoading()
@@ -41,7 +38,7 @@ class LogInVC: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-    
+    //MARK: - Methods
     func setupUI() {
         
         emailTF.makeRounded()

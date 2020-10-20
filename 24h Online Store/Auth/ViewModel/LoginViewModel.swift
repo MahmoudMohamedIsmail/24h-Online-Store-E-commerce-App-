@@ -11,7 +11,7 @@ import RxRelay
 import RxSwift
 
 class LoginViewModel {
-    
+    //MARK: - Properties
     var emailBehavior = BehaviorRelay<String>(value: "")
     var passwordBehavior = BehaviorRelay<String>(value: "")
     var indecatorLoading = BehaviorRelay<Bool>(value: false)
@@ -19,7 +19,7 @@ class LoginViewModel {
     var messageError: Observable<LoginSuccessModel> {
         return loginSuccessModelSubject
     }
-    
+    //MARK: - Methods
     func isValid() -> Observable<Bool> {
         return Observable.combineLatest(emailBehavior.asObservable(), passwordBehavior.asObservable()).map { (email,password) in
             return !email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&  !password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty

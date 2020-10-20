@@ -11,37 +11,100 @@ import RxCocoa
 import RxSwift
 
 class HomeVC: UIViewController {
-    
-    static let cellIdentifer = "reuseCellIdentifiers"
+    //MARK: - IBOutlet
     @IBOutlet weak var homeCollectionView: UICollectionView!
-    let searchController = UISearchController(searchResultsController: nil)
+    //MARK: - Properties
+    var homeSearchTVC :HomeSearchTVC{
+        guard let  searchVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "HomeSearch") as? HomeSearchTVC else {return HomeSearchTVC()}
+        homeViewModel.search().bind(to: searchVC.searchViewModel.items).disposed(by: disposeBag)
+        searchVC.product.subscribe(onNext: { (item) in
+            self.presentProductDetailsVC(productItem:item)
+        }).disposed(by: disposeBag)
+        return searchVC
+    }
+    var searchController = UISearchController(searchResultsController: nil)
+    let homeViewModel = HomeViewModel()
+    let disposeBag = DisposeBag()
+    //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.collectionViewLayout = createCompositionalLayout()
-        homeCollectionView.delegate = self
-        homeCollectionView.dataSource = self
-        //homeCollectionView.register(UICollectionViewCell, forCellWithReuseIdentifier: <#T##String#>)
-        homeCollectionView.register(UINib(nibName: BannerCell.reuseIdentifer, bundle: nil), forCellWithReuseIdentifier: BannerCell.reuseIdentifer)
-        homeCollectionView.register(UINib(nibName: CategoryCell.reuseIdentifer, bundle: nil), forCellWithReuseIdentifier: CategoryCell.reuseIdentifer)
-        homeCollectionView.register(UINib(nibName: ProductCell.reuseIdentifer, bundle: nil), forCellWithReuseIdentifier: ProductCell.reuseIdentifer)
+        UICollectionView.tabBar = tabBarController?.tabBar ?? UITabBar()
+        
+        registerAllCells()
         setupUI()
+        bindHomeSearchBar()
+        bindHomeCollectionView()
+        subscribeToLoading()
+        homeViewModel.getHomeData()
+        subscribeToDidSelectedCells()
     }
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.selectedItem?.selectedImage = UIImage(systemName: "house.fill")
+        //homeViewModel.getHomeData()
+        self.navigationItem.title = "Online Store"
+        
+    }
+    //MARK: - Methods
+    func registerAllCells() {
+        homeCollectionView.register(UINib(nibName: HeaderCollectionReusableView.reuseIdentifer, bundle: nil), forSupplementaryViewOfKind: "header", withReuseIdentifier: HeaderCollectionReusableView.reuseIdentifer)
+        
+        homeCollectionView.register(UINib(nibName: BannerCell.reuseIdentifer, bundle: nil), forCellWithReuseIdentifier: BannerCell.reuseIdentifer)
+        homeCollectionView.register(UINib(nibName: CategoryCell.reuseIdentifer, bundle: nil), forCellWithReuseIdentifier: CategoryCell.reuseIdentifer)
+        homeCollectionView.register(UINib(nibName: ProductCell.reuseIdentifer, bundle: nil), forCellWithReuseIdentifier: ProductCell.reuseIdentifer)
     }
     func setupUI(){
-        // setup searchController in navigarionBar
+        searchController = UISearchController(searchResultsController: homeSearchTVC)
+        searchController.showsSearchResultsController = true
         searchController.searchBar.searchTextField.backgroundColor = .white
         searchController.searchBar.searchTextField.tintColor = UIColor(named: "mainColor")
         searchController.searchBar.tintColor = .white
+        definesPresentationContext = true
+        
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         
         // Add top line view in tabBar
         let tabBar = self.tabBarController!.tabBar
         tabBar.selectionIndicatorImage = UIImage.createSelectionIndicator(size: CGSize(width: tabBar.frame.width/CGFloat(tabBar.items!.count), height:  tabBar.frame.height))
+        
+    
     }
     
+    func bindHomeCollectionView(){
+        homeViewModel.items.bind(to: homeCollectionView.rx.items(dataSource: homeViewModel.dataSource)).disposed(by: disposeBag)
+    }
+    func bindHomeSearchBar(){
+        navigationItem.searchController?.searchBar.rx.text.orEmpty.distinctUntilChanged().bind(to: homeViewModel.query).disposed(by: disposeBag)
+    }
+    func subscribeToDidSelectedCells(){
+        homeCollectionView.rx.itemSelected.subscribe(onNext: { (indexPath) in
+            let product = try! self.homeViewModel.productsData.value()[indexPath.row]
+            self.presentProductDetailsVC(productItem: product)
+        }).disposed(by: disposeBag)
+    }
+    func subscribeToLoading() {
+        homeViewModel.indecatorLoading.subscribe(onNext: { (isLoading) in
+            if isLoading {
+                DispatchQueue.main.async {
+                self.homeCollectionView.isHidden = true
+                self.view.showAnimatingLoader()
+                }
+            } else {
+                DispatchQueue.main.async {
+                self.view.hideAnimatingLoader()
+                 self.homeCollectionView.isHidden = false
+                }
+            }
+        }).disposed(by: disposeBag)
+    }
+    func presentProductDetailsVC(productItem:Product) {
+        let productDetailsVC = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "ProductDetails") as? ProductDetailsVC
+        //assign product to productDeatailsViewModel
+        productDetailsVC?.productDetailsViewModel.product = productItem
+        self.navigationItem.title = ""
+        self.navigationController?.pushViewController(productDetailsVC!, animated: true)
+    }
 }
 //MARK: - create CompositionalLayout to handel all diminsions for UICollectionView
 extension HomeVC {
@@ -114,61 +177,23 @@ extension HomeVC {
         // Item
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
+        item.contentInsets = .init(top: 0, leading: 0, bottom: 15, trailing: 10)
         
         // Group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(400))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(290))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         // Section
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 2.5, bottom: 0, trailing: 2.5)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 10, bottom: 0, trailing: 0)
         //section.orthogonalScrollingBehavior = .paging
+        
+        // Supplementary Item
+        let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(40))
+        let headerItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerItemSize, elementKind: "header", alignment: .top)
+        section.boundarySupplementaryItems = [headerItem]
         
         return section
     }
 }
-extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource
-{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 1 {
-        return 7
-        }
-        else
-        {
-            return 16
-        }
-        
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        3
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
-        
-        if indexPath.section == 0
-        {
-            let cell = homeCollectionView.dequeueReusableCell(withReuseIdentifier: BannerCell.reuseIdentifer, for: indexPath) as! BannerCell
-            // cell.backgroundColor = .red
-            return cell
-        }
-        else if indexPath.section == 1
-        {
-            let cell = homeCollectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseIdentifer, for: indexPath) as! CategoryCell
-            //             let cell = homeCollectionView.dequeueReusableCell(withReuseIdentifier: HomeVC.cellIdentifer, for: indexPath)
-            cell.backgroundColor = .green
-            return cell
-        }
-        else{
-            
-            let cell = homeCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.reuseIdentifer, for: indexPath) as! ProductCell
-             //             let cell = homeCollectionView.dequeueReusableCell(withReuseIdentifier: HomeVC.cellIdentifer, for: indexPath)
-            // cell.backgroundColor = .green
-             return cell
-        }
-        
-    }
-}
+

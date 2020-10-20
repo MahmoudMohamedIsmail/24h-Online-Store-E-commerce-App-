@@ -20,7 +20,7 @@ class Helper {
             // go to auth screen
             vc = sb.instantiateInitialViewController()!
         } else {
-            // go to main screen
+            // go to main screen (home screen)
             vc = sb.instantiateViewController(withIdentifier: "main")
         }
         

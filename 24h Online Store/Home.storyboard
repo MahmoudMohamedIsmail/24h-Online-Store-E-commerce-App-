@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Product DetailsVC-->
+        <scene sceneID="iOy-EW-tgo">
+            <objects>
+                <viewController storyboardIdentifier="ProductDetails" hidesBottomBarWhenPushed="YES" id="xdF-uf-AfQ" customClass="ProductDetailsVC" customModule="_4h_Online_Store" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2u4-Ov-0sA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vT4-E9-waH">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="EoP-ea-70G" userLabel="Footer">
+                                    <rect key="frame" x="0.0" y="99.5" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Fap-OR-fuE">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fap-OR-fuE" id="npU-xH-diU">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8HD-Go-kTV" userLabel="bottomView">
+                                <rect key="frame" x="20" y="772" width="374" height="70"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="u96-uH-KgG">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiO-su-Sxk" userLabel="ShareButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="124.5" height="70"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="tintColor" name="mainColor"/>
+                                                <state key="normal" image="square.and.arrow.up" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="medium" weight="light"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xnm-8O-Je8" userLabel="CartButton">
+                                                <rect key="frame" x="124.5" y="0.0" width="125" height="70"/>
+                                                <color key="tintColor" name="mainColor"/>
+                                                <state key="normal" image="cart" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="medium" weight="light"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhJ-aQ-YgK" userLabel="FavoriteButton">
+                                                <rect key="frame" x="249.5" y="0.0" width="124.5" height="70"/>
+                                                <color key="tintColor" name="mainColor"/>
+                                                <state key="normal" image="heart" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="medium" weight="light"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="u96-uH-KgG" firstAttribute="leading" secondItem="8HD-Go-kTV" secondAttribute="leading" id="0nl-fN-KRS"/>
+                                    <constraint firstAttribute="bottom" secondItem="u96-uH-KgG" secondAttribute="bottom" id="K7R-AH-bbJ"/>
+                                    <constraint firstItem="u96-uH-KgG" firstAttribute="top" secondItem="8HD-Go-kTV" secondAttribute="top" id="TCI-ki-hvz"/>
+                                    <constraint firstAttribute="height" constant="70" id="cCf-bI-7EG"/>
+                                    <constraint firstAttribute="trailing" secondItem="u96-uH-KgG" secondAttribute="trailing" id="rDp-Hj-YwB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8HD-Go-kTV" firstAttribute="leading" secondItem="NC0-N7-Vte" secondAttribute="leading" constant="20" id="191-RF-ftH"/>
+                            <constraint firstItem="NC0-N7-Vte" firstAttribute="bottom" secondItem="vT4-E9-waH" secondAttribute="bottom" id="ESH-aa-HVA"/>
+                            <constraint firstItem="NC0-N7-Vte" firstAttribute="trailing" secondItem="8HD-Go-kTV" secondAttribute="trailing" constant="20" id="KPu-a4-hhN"/>
+                            <constraint firstItem="vT4-E9-waH" firstAttribute="top" secondItem="NC0-N7-Vte" secondAttribute="top" id="Ucy-nz-hZb"/>
+                            <constraint firstItem="NC0-N7-Vte" firstAttribute="trailing" secondItem="vT4-E9-waH" secondAttribute="trailing" id="ajc-Vr-19C"/>
+                            <constraint firstItem="vT4-E9-waH" firstAttribute="leading" secondItem="NC0-N7-Vte" secondAttribute="leading" id="lCg-Rm-izW"/>
+                            <constraint firstItem="8HD-Go-kTV" firstAttribute="bottom" secondItem="vT4-E9-waH" secondAttribute="bottom" constant="-20" id="qDD-bo-JVk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NC0-N7-Vte"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomView" destination="8HD-Go-kTV" id="8PM-gh-x3F"/>
+                        <outlet property="cartButton" destination="Xnm-8O-Je8" id="dza-ST-uah"/>
+                        <outlet property="favioriteButton" destination="RhJ-aQ-YgK" id="wqU-RX-5RC"/>
+                        <outlet property="productTableView" destination="vT4-E9-waH" id="UiW-IV-LbI"/>
+                        <outlet property="shareButton" destination="CiO-su-Sxk" id="ifG-Cg-DGn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aKn-ar-r42" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1398.5507246376812" y="-357.58928571428572"/>
+        </scene>
+        <!--Home SearchTVC-->
+        <scene sceneID="Bo6-g6-891">
+            <objects>
+                <viewController storyboardIdentifier="HomeSearch" id="gZK-V6-zQ4" customClass="HomeSearchTVC" customModule="_4h_Online_Store" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rw6-IB-meY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4bg-ZA-wV4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" id="syZ-ma-bBD">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="syZ-ma-bBD" id="7Ug-R3-RfV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4bg-ZA-wV4" firstAttribute="top" secondItem="dlm-1n-fv5" secondAttribute="top" id="4CN-IC-nJZ"/>
+                            <constraint firstItem="dlm-1n-fv5" firstAttribute="bottom" secondItem="4bg-ZA-wV4" secondAttribute="bottom" id="G5S-9Y-9EY"/>
+                            <constraint firstItem="4bg-ZA-wV4" firstAttribute="leading" secondItem="dlm-1n-fv5" secondAttribute="leading" id="VFs-eX-bhy"/>
+                            <constraint firstItem="dlm-1n-fv5" firstAttribute="trailing" secondItem="4bg-ZA-wV4" secondAttribute="trailing" id="z17-yC-nkQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dlm-1n-fv5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="X60-UQ-nmG"/>
+                    <connections>
+                        <outlet property="tableViewSearch" destination="4bg-ZA-wV4" id="ahE-MF-Cam"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6bX-6a-QoF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3323.1884057971015" y="-374.33035714285711"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <namedColor name="mainColor">
+            <color red="0.88899999856948853" green="0.38100001215934753" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

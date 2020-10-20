@@ -11,9 +11,11 @@ import UIKit
 class CategoryCell: UICollectionViewCell {
 
     static let reuseIdentifer = "CategoryCell"
+    @IBOutlet weak var borderView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        borderView.makeRoundedBorder()
     }
 
 }
