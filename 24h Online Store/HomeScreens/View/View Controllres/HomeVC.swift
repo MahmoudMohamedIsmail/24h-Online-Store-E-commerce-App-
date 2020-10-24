@@ -38,6 +38,7 @@ class HomeVC: UIViewController {
         subscribeToLoading()
         homeViewModel.getHomeData()
         subscribeToDidSelectedCells()
+        subscribeToCartBadgetVaule()
     }
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.selectedItem?.selectedImage = UIImage(systemName: "house.fill")
@@ -68,7 +69,7 @@ class HomeVC: UIViewController {
         let tabBar = self.tabBarController!.tabBar
         tabBar.selectionIndicatorImage = UIImage.createSelectionIndicator(size: CGSize(width: tabBar.frame.width/CGFloat(tabBar.items!.count), height:  tabBar.frame.height))
         
-    
+        
     }
     
     func bindHomeCollectionView(){
@@ -87,13 +88,13 @@ class HomeVC: UIViewController {
         homeViewModel.indecatorLoading.subscribe(onNext: { (isLoading) in
             if isLoading {
                 DispatchQueue.main.async {
-                self.homeCollectionView.isHidden = true
-                self.view.showAnimatingLoader()
+                    self.homeCollectionView.isHidden = true
+                    self.view.showAnimatingLoader()
                 }
             } else {
                 DispatchQueue.main.async {
-                self.view.hideAnimatingLoader()
-                 self.homeCollectionView.isHidden = false
+                    self.view.hideAnimatingLoader()
+                    self.homeCollectionView.isHidden = false
                 }
             }
         }).disposed(by: disposeBag)
@@ -104,6 +105,18 @@ class HomeVC: UIViewController {
         productDetailsVC?.productDetailsViewModel.product = productItem
         self.navigationItem.title = ""
         self.navigationController?.pushViewController(productDetailsVC!, animated: true)
+    }
+    func subscribeToCartBadgetVaule(){
+        homeViewModel.productsData.map {  items in
+            return items.filter { $0.inCart
+            }
+        }.subscribe { (products) in
+
+            guard let badge =  products.element?.count else {return}
+            DispatchQueue.main.async {
+                self.tabBarController?.tabBar.items?[2].badgeValue = (badge > 0) ? "\(badge)":nil
+            }
+        }.disposed(by: disposeBag)
     }
 }
 //MARK: - create CompositionalLayout to handel all diminsions for UICollectionView

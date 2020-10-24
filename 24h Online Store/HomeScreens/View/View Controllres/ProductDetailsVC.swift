@@ -72,6 +72,7 @@ class ProductDetailsVC: UIViewController {
             tabItem.badgeValue = add ? "\(badgetValue+1)":"\(badgetValue-1)"
         }
     }
+    
 }
 //MARK: - UITableViewDataSource
 extension ProductDetailsVC:UITableViewDataSource{

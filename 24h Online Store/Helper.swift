@@ -11,22 +11,24 @@ class Helper {
     
     
     class func restartApp() {
-        guard let window = UIApplication.shared.keyWindow else { return }
         
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        
-        var vc: UIViewController
-        if getApiToken() == nil {
-            // go to auth screen
-            vc = sb.instantiateInitialViewController()!
-        } else {
-            // go to main screen (home screen)
-            vc = sb.instantiateViewController(withIdentifier: "main")
+        //guard let window = UIApplication.shared.keyWindow else { return }
+        if let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
+        {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            
+            var vc: UIViewController
+            if getApiToken() == nil {
+                // go to auth screen
+                vc = sb.instantiateInitialViewController()!
+            } else {
+                // go to main screen (home screen)
+                vc = sb.instantiateViewController(withIdentifier: "main")
+            }
+            window.rootViewController = vc
+            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft , animations: nil, completion: nil)
+            
         }
-        
-        window.rootViewController = vc
-        
-        UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft , animations: nil, completion: nil)
     }
     class func saveApiToken(token:String)
     {
@@ -34,10 +36,10 @@ class Helper {
         def.setValue(token, forKey: "api_token")
         def.synchronize()
         DispatchQueue.main.async {
-        restartApp()
+            restartApp()
             
         }
-       
+        
     }
     
     class func getApiToken() -> String? {

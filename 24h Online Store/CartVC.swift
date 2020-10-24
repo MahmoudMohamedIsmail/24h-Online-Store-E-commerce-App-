@@ -12,9 +12,11 @@ class CartVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("cart did loaded-------cart")
 
     }
     override func viewWillAppear(_ animated: Bool) {
            tabBarController?.tabBar.selectedItem?.selectedImage = UIImage(systemName: "cart.fill")
+        print("cart will appear #######")
        }
 }
